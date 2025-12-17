@@ -64,7 +64,7 @@ LocalStorage: O contador de Pomodoros e o histórico de atividades permanecem sa
 
 ---
 
-Web Audio: Utiliza a tag <audio> para feedback sonoro imediato.
+Web Audio: Utiliza a tag audio para feedback sonoro imediato.
 
 ---
 
