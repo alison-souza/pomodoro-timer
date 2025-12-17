@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./icons/clock.png" type="image/png" />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <button id="toggleTheme">🌙 Tema</button>
+    </div>
+
+    <div class="container">
+      <h1>Pomodoro Timer</h1>
+
+      <div class="timer-container">
+        <svg class="progress-circle" width="200" height="200">
+          <circle class="bg" cx="100" cy="100" r="90"></circle>
+          <circle class="progress" cx="100" cy="100" r="90"></circle>
+        </svg>
+        <div class="timer-display">
+          <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Iniciar</button>
+        <button id="pauseBtn">Pausar</button>
+        <button id="stopBtn">Parar</button>
+        <button id="resetBtn">Resetar</button>
+      </div>
+
+      <div class="intervals">
+        <button data-time="25">Pomodoro</button>
+        <button data-time="5">Intervalo Curto</button>
+        <button data-time="15">Intervalo Longo</button>
+      </div>
+
+      <div class="pomodoro-count">
+        Pomodoros concluídos: <span id="completedPomodoros">0</span>
+      </div>
+
+      <div class="history">
+        <h3>Histórico de Pomodoros:</h3>
+        <button id="clearHistoryBtn" class="small-btn">Limpar Histórico</button>
+        <ul id="pomodoroHistory"></ul>
+      </div>
+    </div>
+
+    <audio
+      id="alarmSound"
+      src="./assets/iphone_alarm.mp3"
+      preload="auto"
+    ></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

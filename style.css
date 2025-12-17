@@ -1,0 +1,239 @@
+:root {
+  --bg-color: #111827;
+  --card-bg: rgba(55, 65, 81, 0.95);
+  --text-color: #e5e7eb;
+  --accent-color: #10b981;
+  --interval-btn: #374151;
+  --interval-btn-hover: #4b5563;
+  --pomodoro-count: #9ca3af;
+}
+
+body.light {
+  --bg-color: #f3f4f6;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-color: #111827;
+  --accent-color: #10b981;
+  --interval-btn: #d1d5db;
+  --interval-btn-hover: #9ca3af;
+  --pomodoro-count: #374151;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--interval-btn);
+  color: var(--text-color);
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.theme-toggle button:hover {
+  background: var(--interval-btn-hover);
+  transform: translateY(-2px);
+}
+
+.container {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  width: 460px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 2.2rem; /* tamanho elegante, não exagerado */
+  font-weight: 600; /* menos pesado para minimalismo */
+  color: #10b981; /* verde sólido elegante */
+  text-align: center;
+  letter-spacing: 1px; /* espaçamento sutil */
+  display: inline-block;
+  padding-bottom: 6px; /* espaço abaixo da linha */
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+h1:hover {
+  color: #34d399; /* leve mudança ao passar mouse */
+  border-color: #34d399;
+}
+
+.timer-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+  fill: none;
+  stroke-width: 15;
+  stroke-linecap: round;
+}
+
+.progress-circle .bg {
+  stroke: #374151;
+}
+
+.progress-circle .progress {
+  stroke: var(--accent-color);
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 565.48;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.controls,
+.intervals {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls button,
+.intervals button {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+#startBtn {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+#pauseBtn {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+}
+#resetBtn {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+}
+
+.intervals button {
+  background: var(--interval-btn);
+  color: var(--text-color);
+}
+
+.intervals button:hover {
+  background: var(--interval-btn-hover);
+}
+
+.pomodoro-count {
+  margin-top: 25px;
+  font-size: 1rem;
+  color: var(--pomodoro-count);
+  font-weight: 600;
+}
+
+.history {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.history h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.history ul {
+  list-style: none;
+  max-height: 120px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+.history ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 4px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.controls button {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+#stopBtn {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+.small-btn {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #ef4444;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.small-btn:hover {
+  background: #f87171;
+  transform: translateY(-1px);
+}
+
+.history ul li button {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.history ul li button:hover {
+  color: #f87171;
+  transform: scale(1.1);
+}
