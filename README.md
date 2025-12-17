@@ -48,6 +48,7 @@ Este projeto foi desenvolvido utilizando o "trio de ouro" do desenvolvimento web
 
 ## 📂 Estrutura do Projeto
 
+```text
 pomodoro-timer/
 ├── icons/
 │ └── clock.png
@@ -55,9 +56,14 @@ pomodoro-timer/
 ├── style.css
 ├── script.js
 └── README.md
+```
 
 ## ⚙️ Detalhes Técnicos
 
 LocalStorage: O contador de Pomodoros e o histórico de atividades permanecem salvos mesmo após fechar o navegador.Web
 Audio: Utiliza a tag <audio> para feedback sonoro imediato.
 Calculo de SVG: O círculo de progresso utiliza a propriedade stroke-dashoffset calculada dinamicamente via JS:$circumference = 2 * \pi * radius$
+
+```
+
+```
