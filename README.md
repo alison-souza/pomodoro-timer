@@ -35,7 +35,7 @@ Este projeto foi desenvolvido utilizando o "trio de ouro" do desenvolvimento web
 1. **Clone o repositório:**
 
    ```bash
-   git clone [https://github.com/alison-souza/pomodoro-timer.git](https://github.com/alison-souza/pomodoro-timer.git)
+   git clone https://github.com/alison-souza/pomodoro-timer.git
    ```
 
 2. **Acesse a pasta:**
