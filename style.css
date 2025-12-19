@@ -18,17 +18,21 @@ body.light {
   --pomodoro-count: #374151;
 }
 
+/* Layout principal */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
   transition: background 0.3s, color 0.3s;
+  margin: 0;
 }
 
+/* Tema toggle */
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -51,34 +55,37 @@ body {
   transform: translateY(-2px);
 }
 
+/* Container principal */
 .container {
   background: var(--card-bg);
   padding: 40px;
   border-radius: 20px;
   width: 460px;
+  max-width: 90%;
   text-align: center;
   backdrop-filter: blur(10px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
   transition: all 0.3s ease;
+  margin-top: 40px;
 }
 
+/* Título */
 h1 {
   margin-bottom: 25px;
-  font-size: 2.2rem; /* tamanho elegante, não exagerado */
-  font-weight: 600; /* menos pesado para minimalismo */
-  color: #10b981; /* verde sólido elegante */
-  text-align: center;
-  letter-spacing: 1px; /* espaçamento sutil */
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #10b981;
+  letter-spacing: 1px;
   display: inline-block;
-  padding-bottom: 6px; /* espaço abaixo da linha */
-  transition: color 0.3s ease, border-color 0.3s ease;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
 h1:hover {
-  color: #34d399; /* leve mudança ao passar mouse */
-  border-color: #34d399;
+  color: #34d399;
 }
 
+/* Timer */
 .timer-container {
   position: relative;
   width: 200px;
@@ -117,6 +124,7 @@ h1:hover {
   letter-spacing: 1px;
 }
 
+/* Controles */
 .controls,
 .intervals {
   margin-top: 20px;
@@ -140,9 +148,15 @@ h1:hover {
 #startBtn {
   background: linear-gradient(135deg, #10b981, #34d399);
 }
+
 #pauseBtn {
   background: linear-gradient(135deg, #f59e0b, #facc15);
 }
+
+#stopBtn {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
 #resetBtn {
   background: linear-gradient(135deg, #ef4444, #f87171);
 }
@@ -156,6 +170,7 @@ h1:hover {
   background: var(--interval-btn-hover);
 }
 
+/* Contador de pomodoros */
 .pomodoro-count {
   margin-top: 25px;
   font-size: 1rem;
@@ -163,6 +178,7 @@ h1:hover {
   font-weight: 600;
 }
 
+/* Histórico */
 .history {
   margin-top: 20px;
   text-align: center;
@@ -192,20 +208,22 @@ h1:hover {
   font-size: 0.9rem;
 }
 
-.controls button {
-  padding: 10px 22px;
-  border-radius: 12px;
+.history ul li button {
+  background: transparent;
   border: none;
+  color: #ef4444;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: color 0.2s, transform 0.2s;
 }
 
-#stopBtn {
-  background: linear-gradient(135deg, #6b7280, #9ca3af);
+.history ul li button:hover {
+  color: #f87171;
+  transform: scale(1.1);
 }
 
+/* Botão pequeno */
 .small-btn {
   padding: 4px 10px;
   font-size: 0.8rem;
@@ -223,17 +241,26 @@ h1:hover {
   transform: translateY(-1px);
 }
 
-.history ul li button {
-  background: transparent;
-  border: none;
-  color: #ef4444;
-  cursor: pointer;
-  font-weight: bold;
-  margin-left: 10px;
-  transition: color 0.2s, transform 0.2s;
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  backdrop-filter: blur(0); /* sem efeito de desfoque */
+  transition: color 0.3s;
+  margin-top: auto; /* garante que fique no fim */
 }
 
-.history ul li button:hover {
-  color: #f87171;
-  transform: scale(1.1);
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #34d399;
+  text-decoration: underline;
 }
